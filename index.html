@@ -10,9 +10,11 @@
 </head>
 <body>
 <script src="worlds.js"></script>
+<link href="https://fonts.googleapis.com/css?family=IM+Fell+English" rel="stylesheet">
 
 <h1>Love Letters to Stitchophrenic</h1>
-<h2>See where Stitchophrenic has beeen!</h2>
+<h2>See where Stitchophrenic has been!</h2>
+<h3>Love Dem shirts</h3>
 <div id="container" >
 
 
@@ -29,9 +31,9 @@
         scope:'world',
         responsive:true,
         highlightOnHover: true,
-        zoomOnClicks: true,
+        zoomOnClicks: false,
 
-        popupOnHover: false,
+        popupOnHover: true,
         fills: {
             defaultFill: '#d3d3d3', // Any hex, color name or rgb/rgba value
             borderColor: '00ff00',
@@ -83,7 +85,7 @@
             fillKey: 'bubbles',
             name: 'Nico',
             backgroundImage: 'photos/losAngeles.png',
-            message: "Love The Shirts So Much man! K",
+            message: "Love The Shirts So Much man!",
             radius: 4,
             country: 'USA',
             city: 'Los Angeles',
@@ -95,7 +97,7 @@
             location: 'Puerto Vallarta, Mexico',
             name: 'Taylor',
             backgroundImage: 'photos/puertoVallarta.png',
-            message: "Love The Shirts So Much man! ",
+            message: "¿Cómo estás?",
             radius: 4,
             country: 'USA',
             city: 'Los Angeles',
@@ -107,7 +109,7 @@
             fillKey: 'bubbles',
             name: 'Jasper',
             backgroundImage: 'photos/angkorWatt.png',
-            message: "Love The Shirts So Much man! K",
+            message: "Wahoo!",
             radius: 4,
             country: 'USA',
             city: 'Los Angeles',
@@ -119,7 +121,7 @@
             fillKey: 'bubbles',
             name: 'Charles',
             backgroundImage: 'photos/waupaca.png',
-            message: "Love The Shirts So Much man! ",
+            message: "Switchin it up!",
             radius: 4,
             country: 'USA',
             city: 'Waupaca',
@@ -130,7 +132,7 @@
             name: 'NA',
             fillKey: 'bubbles',
             backgroundImage: 'photos/santaMonica.png',
-            message: "Love The Shirts So Much man! ",
+            message: "Shreddin' with stitcho",
             radius: 4,
             country: 'USA',
             city: 'Venice',
@@ -141,7 +143,7 @@
             name: 'NA',
             fillKey: 'bubbles',
             backgroundImage: 'photos/southCarolina.png',
-            message: "Love The Shirts So Much man! ",
+            message: "Shells and Shirst What More do you want?!",
             radius: 4,
             country: 'USA',
             city: 'Myrtle Beach',
@@ -152,10 +154,10 @@
             fillKey: 'bubbles',
             name: 'Nico',
             backgroundImage: 'photos/olympia.png',
-            message: "Love The Shirts So Much man! ",
+            message: "On the radio!",
             radius: 4,
             country: 'USA',
-            city: 'Myrtle Beach',
+            city: 'Olympia',
             latitude: 47.037874,
             longitude:-122.900695
         }
@@ -164,7 +166,7 @@
             fillKey: 'bubbles',
             name: 'Wisse',
             backgroundImage: 'photos/NewYork.png',
-            message: "Love The Shirts So Much man! ",
+            message: "Life is good on both sides! ",
             radius: 4,
             country: 'USA',
             city: 'Jersey City',
@@ -176,25 +178,14 @@
             fillKey: 'bubbles',
             name: 'Josh',
             backgroundImage: 'photos/boston.png',
-            message: "Love The Shirts So Much man! ",
+            message: "Shreddin!",
             radius: 4,
             country: 'USA',
             city: 'Myrtle Beach',
             latitude: 42.369189,
             longitude:-71.067724
         }
-        , {
-            location: 'Olympa, Washington',
-            fillKey: 'bubbles',
-            name: 'Nico',
-            backgroundImage: 'photos/olympia.png',
-            message: "Love The Shirts So Much man! ",
-            radius: 4,
-            country: 'USA',
-            city: 'Myrtle Beach',
-            latitude: 47.037874,
-            longitude:-122.900695
-        }
+
         , {
             location: 'Berlin, Germany',
             fillKey: 'bubbles',
@@ -211,6 +202,7 @@
         popupTemplate: function(geo, data) {
 
             d3.select("h2").text(data.location);
+            d3.select("h3").text(data.message);
             d3.select("div").style.backgroundIimage = 'url('+data.backgroundImage +')';
             $(".image").css("background-image",'url('+data.backgroundImage +')');
 

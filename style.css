@@ -20,16 +20,21 @@ svg {
     display : block;
 }
 
-h1, h2 {
+h1, h2,h3 {
     color :white;
     text-align: center;
     width: 100%;
     position: absolute;
+    font-family: 'IM Fell English', serif;
 
+}
+h3{
+    bottom:25vh;
+    left: -16%;
 }
 
 h2 {
-    top: 20vh;
+    top: 16vh;
     left: -17%;
 }
 
