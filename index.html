@@ -1,0 +1,329 @@
+<html>
+<head>
+    <link href= "style.css" rel = "stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="shirts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+<script src="worlds.js"></script>
+
+<h1>Love Letters to Stitchophrenic</h1>
+<h2>See where Stitchophrenic has beeen!</h2>
+<div id="container" >
+
+
+</div>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src="https://datamaps.github.io/scripts/datamaps.world.js"></script>
+<script>
+
+
+
+    var map = new Datamap({
+        element: document.getElementById('container'),
+        scope:'world',
+        responsive:true,
+        highlightOnHover: true,
+        zoomOnClicks: true,
+
+        popupOnHover: false,
+        fills: {
+            defaultFill: '#d3d3d3', // Any hex, color name or rgb/rgba value
+            borderColor: '00ff00',
+            bubbles: '#DD2719'
+        },
+        geographyConfig: {
+            popupOnHover: false,
+            highlightFillColor: '#A9A9A9',
+            highlightBorderWidth: 0
+        },
+       /* bubblesConfig: {
+            borderWidth: 2,
+            borderOpacity: 1,
+            borderColor: '#00FF00',
+            popupOnHover: false
+        },*/
+        bubblesConfig: {
+
+            borderWidth: 0,
+            borderOpacity: 1,
+
+            borderColor: '#DD2719',
+
+            popupOnHover: true,
+            radius: null,
+            popupTemplate: function(geography, data) {
+                return '<div class="hoverinfo"><strong>' + data.name + '</strong></div>';
+            },
+            fillOpacity: 1,
+            animate: true,
+            highlightOnHover: true,
+            highlightFillColor: '#6B120B',
+            highlightBorderColor: 'rgba(250, 15, 160, 0.2)',
+            highlightBorderWidth: 0,
+            highlightBorderOpacity: 1,
+            highlightFillOpacity: 1,
+            exitDelay: 100,
+            key: JSON.stringify
+
+        }
+
+
+        });
+
+    map.bubbles([
+
+        {
+            location: 'Los Angeles, CA',
+            fillKey: 'bubbles',
+            name: 'Nico',
+            backgroundImage: 'photos/losAngeles.png',
+            message: "Love The Shirts So Much man! K",
+            radius: 4,
+            country: 'USA',
+            city: 'Los Angeles',
+            latitude: 34.0522,
+            longitude:-118.2437
+        },
+        {
+            fillKey: 'bubbles',
+            location: 'Puerto Vallarta, Mexico',
+            name: 'Taylor',
+            backgroundImage: 'photos/puertoVallarta.png',
+            message: "Love The Shirts So Much man! ",
+            radius: 4,
+            country: 'USA',
+            city: 'Los Angeles',
+            latitude: 20.653407,
+            longitude:-105.225332
+        },
+        {
+            location: 'Angkor Watt, Cambodia',
+            fillKey: 'bubbles',
+            name: 'Jasper',
+            backgroundImage: 'photos/angkorWatt.png',
+            message: "Love The Shirts So Much man! K",
+            radius: 4,
+            country: 'USA',
+            city: 'Los Angeles',
+            latitude: 13.412469,
+            longitude:103.866986
+        },
+        {
+            location: 'Waupaca, Wisconsin',
+            fillKey: 'bubbles',
+            name: 'Charles',
+            backgroundImage: 'photos/waupaca.png',
+            message: "Love The Shirts So Much man! ",
+            radius: 4,
+            country: 'USA',
+            city: 'Waupaca',
+            latitude: 44.358035,
+            longitude:-89.085946
+        }, {
+            location: 'Venice, California',
+            name: 'NA',
+            fillKey: 'bubbles',
+            backgroundImage: 'photos/santaMonica.png',
+            message: "Love The Shirts So Much man! ",
+            radius: 4,
+            country: 'USA',
+            city: 'Venice',
+            latitude: 34.019454,
+            longitude:-118.491191
+        }, {
+            location: 'Myrtle Beach, South Carolina',
+            name: 'NA',
+            fillKey: 'bubbles',
+            backgroundImage: 'photos/southCarolina.png',
+            message: "Love The Shirts So Much man! ",
+            radius: 4,
+            country: 'USA',
+            city: 'Myrtle Beach',
+            latitude: 33.689060,
+            longitude:-78.886694
+        }, {
+            location: 'Olympa, Washington',
+            fillKey: 'bubbles',
+            name: 'Nico',
+            backgroundImage: 'photos/olympia.png',
+            message: "Love The Shirts So Much man! ",
+            radius: 4,
+            country: 'USA',
+            city: 'Myrtle Beach',
+            latitude: 47.037874,
+            longitude:-122.900695
+        }
+        , {
+            location: 'Jersey City, New Jersey',
+            fillKey: 'bubbles',
+            name: 'Wisse',
+            backgroundImage: 'photos/NewYork.png',
+            message: "Love The Shirts So Much man! ",
+            radius: 4,
+            country: 'USA',
+            city: 'Jersey City',
+            latitude: 40.732551,
+            longitude:-74.092441
+        }
+        , {
+            location: 'Cambridge, Massachusetts',
+            fillKey: 'bubbles',
+            name: 'Josh',
+            backgroundImage: 'photos/boston.png',
+            message: "Love The Shirts So Much man! ",
+            radius: 4,
+            country: 'USA',
+            city: 'Myrtle Beach',
+            latitude: 42.369189,
+            longitude:-71.067724
+        }
+        , {
+            location: 'Olympa, Washington',
+            fillKey: 'bubbles',
+            name: 'Nico',
+            backgroundImage: 'photos/olympia.png',
+            message: "Love The Shirts So Much man! ",
+            radius: 4,
+            country: 'USA',
+            city: 'Myrtle Beach',
+            latitude: 47.037874,
+            longitude:-122.900695
+        }
+        , {
+            location: 'Berlin, Germany',
+            fillKey: 'bubbles',
+            name: 'Moritz',
+            backgroundImage: 'photos/berlin1.jpg',
+            message: "Love The Shirts So Much man! ",
+            radius: 4,
+            country: 'USA',
+            city: 'Myrtle Beach',
+            latitude: 52.520007,
+            longitude:13.404954
+        }
+    ], {
+        popupTemplate: function(geo, data) {
+
+            d3.select("h2").text(data.location);
+            d3.select("div").style.backgroundIimage = 'url('+data.backgroundImage +')';
+            $(".image").css("background-image",'url('+data.backgroundImage +')');
+
+
+        }
+
+    });
+
+
+
+
+    var width = 960,
+            height = 500,
+            active = d3.select(null);
+
+    var projection = d3.geoEquirectangular
+     .scale(1000)
+     .translate([width / 2, height / 2]);
+
+    var zoom = d3.behavior.zoom()
+            .translate([0, 0])
+            .scale(1)
+            .scaleExtent([1, 8])
+            .on("zoom", zoomed);
+
+
+
+
+    var svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .on("click", stopped, true);
+
+    svg.append("rect")
+            .attr("class", "background")
+            .attr("width", width)
+            .attr("height", height)
+            .on("click", clicked);
+    var path = d3.geo.path()
+            .projection(projection);
+
+    svg
+            .call(zoom) // delete this line to disable free zooming
+            .call(zoom.event);
+
+    d3.json(map, function(error, us) {
+        if (error) throw error;
+
+        g.selectAll("path")
+                .data(topojson.feature(us, world.objects.country).features)
+                .enter().append("path")
+                .attr("d", path)
+                .attr("class", "feature")
+                .on("click", clicked);
+
+        g.append("path")
+                .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
+                .attr("class", "mesh")
+                .attr("d", path);
+    });
+
+
+
+    function clicked(d) {
+        console.log("clockeed");
+        if (active.node() === this) return reset();
+        active.classed("active", false);
+        active = d3.select(this).classed("active", true);
+
+        var bounds = path.bounds(d),
+                dx = bounds[1][0] - bounds[0][0],
+                dy = bounds[1][1] - bounds[0][1],
+                x = (bounds[0][0] + bounds[1][0]) / 2,
+                y = (bounds[0][1] + bounds[1][1]) / 2,
+                scale = Math.max(1, Math.min(8, 0.9 / Math.max(dx / width, dy / height))),
+                translate = [width / 2 - scale * x, height / 2 - scale * y];
+
+        svg.transition()
+                .duration(750)
+                .call(zoom.translate(translate).scale(scale).event);
+    }
+
+
+    // If the drag behavior prevents the default click,
+    // also stop propagation so we don’t click-to-zoom.
+    function stopped() {
+        if (d3.event.defaultPrevented) d3.event.stopPropagation();
+    }
+
+    function zoomed() {
+        g.style("stroke-width", 1.5 / d3.event.scale + "px");
+        g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+    }
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<!--<button class="zoom-button" data-zoom="reset">0</button>
+<button class="zoom-button" data-zoom="out">-</button>
+<button class="zoom-button" data-zoom="in">+</button>
+<div id="zoom-info"></div>-->
+
+<div class="image">
+
+
+</div>
+</body>
+</html>
